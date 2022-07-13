@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password verification</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <label for="email-input" class="margin-bottom">Email</label>
+      <input type="text" id="email-input" name="email-nput" />
+
+      <label for="password-input" class="margin-top margin-bottom"
+        >Create password</label
+      >
+      <div class="password-container">
+        <input type="password" id="password-input" name="password-input" />
+        <img
+          src="./images/password-hidden.jpg"
+          alt="Icon showing that password is hidden"
+          id="password-input__img--off"
+          class="password-img"
+        />
+        <img
+          src="./images/password-shown.png"
+          alt="Icon showing that password is shown"
+          id="password-input__img--on"
+          class="password-img hidden"
+        />
+      </div>
+
+      <div class="conditions-container">
+        <div class="conditions-container__left">
+          <ul class="conditions-container__list">
+            <li class="conditions-container__list__elem" id="lowercase-check">
+              <span>One lowercase character</span>
+            </li>
+            <li class="conditions-container__list__elem" id="uppercase-check">
+              <span>One uppercase character</span>
+            </li>
+            <li class="conditions-container__list__elem" id="number-check">
+              <span>One number</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="conditions-container__right">
+          <ul class="conditions-container__list">
+            <li class="conditions-container__list__elem" id="special-check">
+              <span>One special character</span>
+            </li>
+            <li class="conditions-container__list__elem" id="length-check">
+              <span>8 characters minimum</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <label for="repeat-input" class="margin-top margin-bottom"
+        >Repeat password</label
+      >
+      <div class="password-container">
+        <input type="password" id="repeat-input" name="repeat-input" />
+        <img
+          src="./images/password-hidden.jpg"
+          alt="Icon showing that password is hidden"
+          id="repeat-input__img--off"
+          class="password-img"
+        />
+        <img
+          src="./images/password-shown.png"
+          alt="Icon showing that password is shown"
+          id="repeat-input__img--on"
+          class="password-img hidden"
+        />
+      </div>
+
+      <div class="tou-container">
+        <input type="checkbox" id="tou-input" name="tou" />
+        <label for="tou" id="tou-label"
+          >By continuing you indicated that you read and agreed to the
+          <a href="#" class="tou-link">Terms of use</a></label
+        >
+      </div>
+
+      <button id="sign-up-button">Sign up</button>
+
+      <ul id="comments-list"></ul>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

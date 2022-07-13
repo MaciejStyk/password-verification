@@ -1,0 +1,172 @@
+:root {
+  --main-font: "Nunito Sans", sans-serif;
+  --pink: rgb(224, 45, 167);
+  --light-grey: rgb(245, 245, 245);
+  --semi-light-grey: rgb(210, 210, 210);
+  --grey: rgb(170, 170, 170);
+  --dark-grey: rgb(50, 50, 50);
+}
+
+* {
+  margin: 0;
+}
+
+/* =================
+Typography
+================= */
+
+body {
+  font-family: var(--main-font);
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--dark-grey);
+}
+
+.conditions-container {
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+
+.comments-list__elem {
+  font-size: 0.8rem;
+  color: var(--pink);
+}
+
+/* =================
+Layout
+================= */
+
+.container {
+  max-width: 300px;
+  margin: 100px auto 0px;
+}
+
+label {
+  display: block;
+}
+
+.margin-top {
+  margin-top: 1em;
+}
+
+.margin-bottom {
+  margin-bottom: 0.2em;
+}
+
+#email-input,
+#password-input,
+#repeat-input {
+  display: block;
+  box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
+  border: var(--semi-light-grey) 2px solid;
+}
+
+input:focus,
+button:focus,
+.tou-link:focus {
+  outline-color: var(--pink);
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-img {
+  position: absolute;
+  width: 1.5em;
+  top: 50%;
+  right: 5%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.conditions-container {
+  display: flex;
+  justify-content: space-between;
+  background: var(--light-grey);
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+.conditions-container__list {
+  padding-left: 1.5rem;
+}
+
+.conditions-container__list__elem {
+  margin: 0.5em;
+}
+
+.passed-condition {
+  color: var(--pink);
+}
+
+.passed-condition span {
+  color: var(--dark-grey);
+}
+
+.tou-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+
+#tou-input {
+  width: 5%;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 5px;
+  border: 2px solid var(--grey);
+}
+
+#tou-input:checked {
+  background: var(--pink);
+  border: 2px solid var(--pink);
+}
+
+#tou-input:checked::after {
+  position: absolute;
+  left: 20%;
+  top: -10%;
+  content: "\2713";
+  color: white;
+}
+
+#tou-label {
+  width: 90%;
+}
+
+.tou-link:visited {
+  color: blue;
+}
+
+.tou-link:active {
+  color: var(--pink);
+}
+
+#sign-up-button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: var(--pink);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.comments-list__elem {
+  margin: 1em 0.5em 0.5em -0.5em;
+}
