@@ -119,10 +119,21 @@ repeatImgOn.addEventListener("touchend", hideRepeat);
 
 //======================================================================================
 
+// Conditions for a proper email address
+
+let mailCheck =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 // Signup final verification:
 
 signupButton.addEventListener("click", () => {
   comments.innerHTML = "";
+
+  if (!email.value.match(mailCheck)) {
+    comments.innerHTML +=
+      "<li class='comments-list__elem'>Wrong email address</li>";
+  }
+
   if (!partCheck) {
     comments.innerHTML +=
       "<li class='comments-list__elem'>Insufficient password</li>";
@@ -138,7 +149,14 @@ signupButton.addEventListener("click", () => {
       "<li class='comments-list__elem'>You must agree to the Terms of use</li>";
   }
 
-  if (partCheck && repeat.value === password.value && checkbox.checked) {
+  // Allow for pressing sign up button when all necessary conditions are met:
+
+  if (
+    email.value.match(mailCheck) &&
+    partCheck &&
+    repeat.value === password.value &&
+    checkbox.checked
+  ) {
     partCheck = false;
     email.value = "";
     password.value = "";
