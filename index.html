@@ -15,15 +15,20 @@
   </head>
 
   <body>
-    <div class="container">
+    <form
+      action="index.html"
+      method="POST"
+      onsubmit="event.preventDefault(); validateForm();"
+      class="container"
+    >
       <label for="email-input" class="margin-bottom">Email</label>
-      <input type="text" id="email-input" name="email-nput" />
+      <input type="email" id="email-input" required />
 
       <label for="password-input" class="margin-top margin-bottom"
         >Create password</label
       >
       <div class="password-container">
-        <input type="password" id="password-input" name="password-input" />
+        <input type="password" id="password-input" required />
         <img
           src="./images/password-hidden.jpg"
           alt="Icon showing that password is hidden"
@@ -69,7 +74,7 @@
         >Repeat password</label
       >
       <div class="password-container">
-        <input type="password" id="repeat-input" name="repeat-input" />
+        <input type="password" id="repeat-input" required />
         <img
           src="./images/password-hidden.jpg"
           alt="Icon showing that password is hidden"
@@ -85,17 +90,16 @@
       </div>
 
       <div class="tou-container">
-        <input type="checkbox" id="tou-input" name="tou" />
-        <label for="tou" id="tou-label"
+        <input type="checkbox" id="tou-input" />
+        <label for="tou-input" id="tou-label"
           >By continuing you indicated that you read and agreed to the
           <a href="#" class="tou-link">Terms of use</a></label
         >
       </div>
 
-      <button id="sign-up-button">Sign up</button>
+      <button type="submit" id="sign-up-button">Sign up</button>
+    </form>
 
-      <ul id="comments-list"></ul>
-    </div>
     <script src="./index.js"></script>
   </body>
 </html>

@@ -5,7 +5,6 @@ const password = document.getElementById("password-input");
 const repeat = document.getElementById("repeat-input");
 const conditions = document.getElementsByClassName("conditions-container")[0];
 const signupButton = document.getElementById("sign-up-button");
-const comments = document.getElementById("comments-list");
 const checkbox = document.getElementById("tou-input");
 
 // Password conditions' list DOM elements:
@@ -126,27 +125,25 @@ let mailCheck =
 
 // Signup final verification:
 
-signupButton.addEventListener("click", () => {
-  comments.innerHTML = "";
-
+function validateForm() {
   if (!email.value.match(mailCheck)) {
-    comments.innerHTML +=
-      "<li class='comments-list__elem'>Wrong email address</li>";
+    alert("Wrong email address");
+    return false;
   }
 
   if (!partCheck) {
-    comments.innerHTML +=
-      "<li class='comments-list__elem'>Insufficient password</li>";
+    alert("Insufficient password");
+    return false;
   }
 
   if (repeat.value !== password.value) {
-    comments.innerHTML +=
-      "<li class='comments-list__elem'>Passwords do not match</li>";
+    alert("Passwords do not match");
+    return false;
   }
 
   if (!checkbox.checked) {
-    comments.innerHTML +=
-      "<li class='comments-list__elem'>You must agree to the Terms of use</li>";
+    alert("You must agree to the Terms of use");
+    return false;
   }
 
   // Allow for pressing sign up button when all necessary conditions are met:
@@ -157,12 +154,13 @@ signupButton.addEventListener("click", () => {
     repeat.value === password.value &&
     checkbox.checked
   ) {
+    // Reset all fields:
+
     partCheck = false;
     email.value = "";
     password.value = "";
     repeat.value = "";
     checkbox.checked = false;
-    comments.innerHTML = "";
 
     // Reset conditions container:
 
@@ -176,5 +174,8 @@ signupButton.addEventListener("click", () => {
       specialElem.classList.remove("passed-condition");
       lengthElem.classList.remove("passed-condition");
     }
+
+    alert("Form sent properly");
+    return true;
   }
-});
+}
